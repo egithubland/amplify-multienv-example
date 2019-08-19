@@ -13,11 +13,11 @@ Amplify.configure(awsConfig);
 
 const ListView = ({ todos }) => (
   <div>
-    <h2>All Todos</h2>
+    <h2>All Tasks</h2>
     <ul>
       {todos.map(todo => (
         <li key={todo.id}>
-          {todo.name} - {todo.description} - ({todo.status})
+          {todo.status} : {todo.name} : {todo.description}
         </li>
       ))}
     </ul>
@@ -51,9 +51,11 @@ class AddTodo extends Component {
   render() {
     return (
       <div>
+      <label for="input1">Note</label>
         <input
+          id="input1"
           name="name"
-          placeholder="name"
+          placeholder="Bracelet"
           onChange={ev => {
             this.handleChange("name", ev);
           }}
@@ -62,9 +64,11 @@ class AddTodo extends Component {
             margin: "5px"
           }}
         />
+      <label for="input2">Link URL</label>
         <input
+          id="input2"
           name="description"
-          placeholder="description"
+          placeholder="amazon.com search page1"
           onChange={ev => {
             this.handleChange("description", ev);
           }}
