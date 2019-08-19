@@ -17,7 +17,7 @@ const ListView = ({ todos }) => (
     <ul>
       {todos.map(todo => (
         <li key={todo.id}>
-          {todo.name} - {todo.description} - ({todo.id})
+          {todo.name} - {todo.description} - ({todo.status})
         </li>
       ))}
     </ul>
