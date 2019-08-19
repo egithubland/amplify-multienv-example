@@ -95,7 +95,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h2>Add Todo</h2>
+        <h2>Add Task</h2>
         <Connect mutation={graphqlOperation(mutations.createTodo)}>
           {({ mutation }) => <AddTodo onCreate={mutation} />}
         </Connect>
