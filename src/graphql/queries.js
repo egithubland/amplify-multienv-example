@@ -7,7 +7,7 @@ export const getTodo = `query GetTodo($id: ID!) {
     name
     description
     status
-    createdAt
+    
   }
 }
 `;
@@ -22,7 +22,7 @@ export const listTodos = `query ListTodos(
       name
       description
       status
-      createdAt
+      
     }
     nextToken
   }
