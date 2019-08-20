@@ -17,7 +17,11 @@ const ListView = ({ todos }) => (
     <ul>
       {todos.map(todo => (
         <li key={todo.id}>
-          {todo.status} : {todo.name} : {todo.description}
+        {
+        if (todo.status == "Complete") {	=> (
+          <a href={'https://edatalandsheet.s3-us-west-2.amazonaws.com/'+todo.id+'.csv'} target="_blank">Download</a>
+          )
+        }}  {todo.status} : {todo.name} : {todo.description}
         </li>
       ))}
     </ul>
