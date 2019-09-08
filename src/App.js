@@ -15,7 +15,11 @@ const ListView = ({ todos }) => (
   <div>
     <h2>All Tasks</h2>
     <ul>
-      {todos.map(todo => (
+      {todos
+  .sort(function (a, b) {
+    return b.id - a.id;
+  })
+  .map(todo => (
         <li key={todo.id}>
         {todo.status == "Complete" ? <a href={'https://edatalandsheet.s3-us-west-2.amazonaws.com/'+todo.id+'.csv'} target="_blank">Download  </a> : ""}
         {todo.status} : {todo.name} : {todo.createdAt} : {todo.description}
